@@ -9,12 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 import { IndexModule } from './index/index.module';
 import { LogoComponent } from './components/logo/logo.component';
+import { NoPageComponent } from './no-page/no-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     HomeComponent,
-    LogoComponent
+    LogoComponent,
+    NoPageComponent
   ],
   imports: [
     BrowserModule,

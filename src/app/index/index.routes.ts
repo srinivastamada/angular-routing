@@ -1,4 +1,3 @@
-import { NoPageComponent } from './no-page/no-page.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { SignupComponent } from './signup/signup.component';
 import { Route } from '@angular/router';

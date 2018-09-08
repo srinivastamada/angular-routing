@@ -4,7 +4,7 @@ import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
 import { ForgotComponent } from "./forgot/forgot.component";
 import { SystemErrorComponent } from "./system-error/system-error.component";
-import { NoPageComponent } from "./no-page/no-page.component";
+
 
 @NgModule({
   imports: [CommonModule],
@@ -12,8 +12,7 @@ import { NoPageComponent } from "./no-page/no-page.component";
     LoginComponent,
     SignupComponent,
     ForgotComponent,
-    SystemErrorComponent,
-    NoPageComponent
+    SystemErrorComponent
   ]
 })
 export class IndexModule {}

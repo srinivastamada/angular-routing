@@ -12,17 +12,19 @@
     <div class="navbar-menu">
       <!-- <div class="navbar-start">AA</div> -->
       <div class="navbar-end">
-        <a class="navbar-item " href="#" target="_blank">
-          Page 1
+        <a class="navbar-item " routerLink="/" routerLinkActive="active">
+          Dashboard
         </a>
-        <a class="navbar-item " href="#" target="_blank">
-          Page 1
+        <a class="navbar-item " routerLink="/products" routerLinkActive="active">
+         Products
         </a>
-        <a class="navbar-item " href="#" target="_blank">
-          Page 1
+        <a class="navbar-item " routerLink="/settings" routerLinkActive="active">
+         Settings
         </a>
-        <a class="navbar-item " href="#" target="_blank">
-          Logout
+        <a class="navbar-item "  routerLinkActive="active">
+          <span class="icon has-text-danger">
+            <i class="fas fa-ban"></i>
+          </span> Logout
         </a>
 
       </div>
@@ -31,7 +33,7 @@
 
   <div class="content">
     <section class="section">
-      <div class="container">
+      <div class="container mainBlock">
         <router-outlet></router-outlet>
       </div>
     </section>
