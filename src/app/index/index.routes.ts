@@ -1,3 +1,4 @@
+import { AuthGuardService } from './../services/auth-guard.service';
 import { ForgotComponent } from './forgot/forgot.component';
 import { SignupComponent } from './signup/signup.component';
 import { Route } from '@angular/router';
@@ -10,7 +11,7 @@ export const IndexRoutes: Route[] = [
     component: IndexComponent,
     children: [
       {
-        path: '',
+        path: 'login',
         component: LoginComponent
       },
       {
