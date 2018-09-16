@@ -1,4 +1,4 @@
-import { AuthGuardService } from './services/auth-guard.service';
+import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,7 +28,7 @@ import { NoPageComponent } from './no-page/no-page.component';
     IndexModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
