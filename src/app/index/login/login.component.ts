@@ -8,30 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   postData = {
-    'email': '',
-    'password': ''
-  }
+    email: '',
+    password: ''
+  };
   public errorText: string;
 
-  constructor(public authService: AuthService, public router: Router) { 
+  constructor(public authService: AuthService, public router: Router) {
     this.errorText = '';
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  loginAction(){
-    if(this.postData.email && this.postData.password){
-      if(this.authService.login(this.postData)){
+  loginAction() {
+    if (this.postData.email && this.postData.password) {
+      if (this.authService.login(this.postData)) {
         this.router.navigate(['']);
       }
     } else {
-      this.errorText = 'Please give valid data'
+      this.errorText = 'Please give valid data';
     }
-   
   }
-
-
 }

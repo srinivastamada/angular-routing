@@ -26,7 +26,7 @@ import { NoPageComponent } from './no-page/no-page.component';
     AppRoutingModule,
     HomeModule,
     IndexModule,
-    RouterModule.forRoot(routes)
+   RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
