@@ -1,10 +1,6 @@
-import { ForgotComponent } from './forgot/forgot.component';
-import { SignupComponent } from './signup/signup.component';
 import { Route } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { SystemErrorComponent } from './system-error/system-error.component';
-import { IndexComponent } from './index.component';
 import { LoginGuard } from '../guards/login.guard';
+import { IndexComponent } from './index.component';
 export const IndexRoutes: Route[] = [
   {
     path: '',
@@ -13,19 +9,20 @@ export const IndexRoutes: Route[] = [
     children: [
       {
         path: 'login',
-        component: LoginComponent
+        loadChildren: 'app/index/login/login.module#LoginModule'
       },
       {
         path: 'signup',
-        component: SignupComponent
+        loadChildren: 'app/index/signup/signup.module#SignupModule'
       },
       {
         path: 'forgot',
-        component: ForgotComponent
+        loadChildren: 'app/index/forgot/forgot.module#ForgotModule'
       },
       {
         path: 'system-error',
-        component: SystemErrorComponent
+        loadChildren:
+          'app/index/system-error/system-error.module#SystemErrorModule'
       }
     ]
   }

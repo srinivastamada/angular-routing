@@ -1,19 +1,13 @@
-import { NgModule } from "@angular/core";
+import { CommonModule } from '@angular/common';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from "@angular/common";
-import { LoginComponent } from "./login/login.component";
-import { SignupComponent } from "./signup/signup.component";
-import { ForgotComponent } from "./forgot/forgot.component";
-import { SystemErrorComponent } from "./system-error/system-error.component";
-
+import { ComponentsModule } from '../components/components.module';
+import { IndexComponent } from './index.component';
 @NgModule({
-  imports: [CommonModule, FormsModule, RouterModule],
-  declarations: [
-    LoginComponent,
-    SignupComponent,
-    ForgotComponent,
-    SystemErrorComponent
-  ]
+  imports: [CommonModule, RouterModule, FormsModule, ComponentsModule],
+  declarations: [IndexComponent],
+  exports: [IndexComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class IndexModule {}
