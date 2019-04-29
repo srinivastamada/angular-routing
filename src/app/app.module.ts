@@ -1,34 +1,27 @@
-import { AuthGuard } from './guards/auth.guard';
-import { AuthService } from './services/auth.service';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { routes } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { HomeComponent } from './home/home.component';
+import { routes } from './app.routing';
+import { AuthGuard } from './guards/auth.guard';
 import { HomeModule } from './home/home.module';
 import { IndexModule } from './index/index.module';
-import { LogoComponent } from './components/logo/logo.component';
-import { NoPageComponent } from './no-page/no-page.component';
+import { NoPageModule } from './no-page/no-page.module';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    IndexComponent,
-    HomeComponent,
-    LogoComponent,
-    NoPageComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     IndexModule,
-   RouterModule.forRoot(routes, { useHash: true })
+    NoPageModule,
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [AuthService, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}
