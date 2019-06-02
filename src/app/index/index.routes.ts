@@ -9,20 +9,25 @@ export const IndexRoutes: Route[] = [
     children: [
       {
         path: 'login',
-        loadChildren: 'app/index/login/login.module#LoginModule'
+        loadChildren: () =>
+          import('../index/login/login.module').then(m => m.LoginModule)
       },
       {
         path: 'signup',
-        loadChildren: 'app/index/signup/signup.module#SignupModule'
+        loadChildren: () =>
+          import('../index/signup/signup.module').then(m => m.SignupModule)
       },
       {
         path: 'forgot',
-        loadChildren: 'app/index/forgot/forgot.module#ForgotModule'
+        loadChildren: () =>
+          import('../index/forgot/forgot.module').then(m => m.ForgotModule)
       },
       {
         path: 'system-error',
-        loadChildren:
-          'app/index/system-error/system-error.module#SystemErrorModule'
+        loadChildren: () =>
+          import('../index/system-error/system-error.module').then(
+            m => m.SystemErrorModule
+          )
       }
     ]
   }
