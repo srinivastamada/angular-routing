@@ -10,23 +10,32 @@ export const HomeRoutes: Route[] = [
     children: [
       {
         path: '',
-        loadChildren: 'app/home/dashboard/dashboard.module#DashboardModule'
+        loadChildren: () =>
+          import('../home/dashboard/dashboard.module').then(
+            m => m.DashboardModule
+          )
       },
       {
         path: 'settings',
-        loadChildren: 'app/home/settings/settings.module#SettingsModule'
+
+        loadChildren: () =>
+          import('../home/settings/settings.module').then(m => m.SettingsModule)
       },
       {
         path: 'products',
-        loadChildren: 'app/home/products/products.module#ProductsModule'
+
+        loadChildren: () =>
+          import('../home/products/products.module').then(m => m.ProductsModule)
       },
       {
         path: 'user/:username',
-        loadChildren: 'app/home/user/user.module#UserModule'
+        loadChildren: () =>
+          import('../home/user/user.module').then(m => m.UserModule)
       },
       {
         path: 'user/:username/:id',
-        loadChildren: 'app/home/user/user.module#UserModule'
+        loadChildren: () =>
+          import('../home/user/user.module').then(m => m.UserModule)
       }
     ]
   }
