@@ -8,8 +8,8 @@ import { ValidateService } from './../../services/validate.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit, OnDestroy {
-  username: string;
-  id: string;
+  username = '';
+  id = '';
   private sub: any;
 
   constructor(
@@ -19,7 +19,7 @@ export class UserComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.sub = this.activatedRoute.paramMap.subscribe(params => {
+    this.sub = this.activatedRoute.paramMap.subscribe((params: any) => {
       this.verifyUsername(params.get('username'));
       this.verifyID(params.get('id'));
     });

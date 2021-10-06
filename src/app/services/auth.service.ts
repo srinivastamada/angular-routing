@@ -16,7 +16,7 @@ export class AuthService {
     }
   }
 
-  public async login(postData) {
+  public async login(postData: any) {
     const loginApiResponce = {
       name: 'Srinivas Tamada',
       uid: 1,
