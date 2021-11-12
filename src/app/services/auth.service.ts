@@ -7,18 +7,24 @@ export class AuthService {
   constructor() {}
 
   public isAuthenticated(): boolean {
-    const userData = sessionStorage.getItem('userData');
-    console.log(userData);
-    if (userData && userData.length > 0) {
+    const userData: any = sessionStorage.getItem('userData') || null
+    const userJsonData = JSON.parse(userData);
+    console.log(userJsonData);
+    if (userJsonData?.email) {
       return true;
     } else {
       return false;
     }
   }
 
+  public getUserData(): any {
+    const userData: any = sessionStorage.getItem('userData');
+    return JSON.parse(userData);
+  }
+
   public async login(postData: any) {
     const loginApiResponce = {
-      name: 'Srinivas Tamada',
+      email: postData.email,
       uid: 1,
       token: '2323523523DFSWERWERWER'
     };

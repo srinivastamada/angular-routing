@@ -4,7 +4,7 @@
   "viewportWidth": 1200,
   "viewportHeight": 800,
   "screenshotOnRunFailure": true,
-  "video": true,
+  "video": false,
   "watchForFileChanges": false,
   "chromeWebSecurity": false,
   "pageLoadTimeout": 60000

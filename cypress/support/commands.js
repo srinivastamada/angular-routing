@@ -10,7 +10,17 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add("login", (email, password) => {
+  const baseUrl = Cypress.config().baseUrl;
+  cy.visit(baseUrl);
+  cy.get("#loginEmail").focus().clear().type(email);
+  cy.get("#loginPassword").focus().clear().type(password);
+  cy.get("#loginButton").click();
+});
+
+Cypress.Commands.add("logout", () => {
+  cy.get("#logoutLink").click();
+});
 //
 //
 // -- This is a child command --

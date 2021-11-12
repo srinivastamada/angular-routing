@@ -12,16 +12,16 @@
     <div class="navbar-menu">
       <!-- <div class="navbar-start">AA</div> -->
       <div class="navbar-end">
-        <a class="navbar-item " routerLink="/" routerLinkActive="active">
+        <a class="navbar-item " routerLink="/" routerLinkActive="active" id="dashboardLink"> 
           Dashboard
         </a>
-        <a class="navbar-item " routerLink="/products" routerLinkActive="active">
+        <a class="navbar-item " routerLink="/products" routerLinkActive="active" id="productsLink">
          Products
         </a>
-        <a class="navbar-item " routerLink="/settings" routerLinkActive="active">
+        <button class="navbar-item " routerLink="/settings" routerLinkActive="active" id="settingsLink">
          Settings
-        </a>
-        <a class="navbar-item "  (click)="logoutAction()">
+        </button>
+        <a class="navbar-item "  (click)="logoutAction()" id="logoutLink">
           <span class="icon has-text-danger">
             <i class="fas fa-ban"></i>
           </span> Logout
