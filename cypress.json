@@ -1,1 +1,11 @@
-{}
+{
+  "baseUrl": "http://localhost:4200",
+  "testFiles": ["*.*"],
+  "viewportWidth": 1200,
+  "viewportHeight": 800,
+  "screenshotOnRunFailure": true,
+  "video": true,
+  "watchForFileChanges": false,
+  "chromeWebSecurity": false,
+  "pageLoadTimeout": 60000
+}
